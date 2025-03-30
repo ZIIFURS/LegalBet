@@ -1,0 +1,335 @@
+@font-face {
+    font-family: "ProximaNova";
+    src: url("../fonts/proximanova_regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Future";
+    src: url("../fonts/FuturaCyrillicMedium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "ProximaNova", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d3d0d0;
+    height: 100vh;
+    display: flex;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 16px;
+}
+@media (min-width: 745px) {
+    .card {
+        width: 768px;
+    }
+    .little-stat-content {
+        display: none;
+    }
+    .little-right-content {
+        display: none;
+    }
+    .coeff-text-little {
+        display: none;
+    }
+    .footer-mobile {
+        display: none;
+    }
+}
+@media (max-width: 744px) {
+    .card {
+        width: 351px;
+    }
+    .upper-card {
+        padding: 16px !important;
+    }
+    .statistic {
+        display: none;
+    }
+    .little-stat-content {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        white-space: nowrap;
+        color: rgba(0, 0, 0, 0.2);
+    }
+    .right-content {
+        display: none !important;
+    }
+    .expert {
+        gap: 0 !important;
+        justify-content: space-between;
+    }
+    .little-right-content {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+    }
+    .footer-card {
+        padding: 16px 16px 16px 14px !important;
+    }
+    .footer-desktop {
+        display: none !important;
+    }
+    .footer-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .coeff {
+        font-size: 18px !important;
+    }
+    .btn-container {
+        height: 40px;
+    }
+}
+
+.mobile-rate {
+    display: flex;
+    flex-direction: row;
+}
+
+.coeff-text {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.upper-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+}
+
+.expert {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+}
+.expert .left-content {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+.expert .left-content img {
+    border-radius: 50%;
+}
+
+.expert .left-content .expert-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    line-height: 16px;
+    @media (min-width: 745px) {
+        width: 233px;
+    }
+}
+
+.name {
+    font-weight: 600;
+}
+
+.statistic {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.expert .right-content {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.right-content .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 64px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.line {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main-text {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    max-height: 120px;
+    overflow: hidden;
+    position: relative;
+    transition: height 250ms ease-in-out;
+}
+
+.main-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0 -27px 27px -15px white;
+    pointer-events: none;
+}
+
+.main-text.hidden::after {
+    display: none;
+}
+
+.hidden {
+    animation-name: hidden-text;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes hidden-text {
+    from {
+        max-height: 120px;
+    }
+    to {
+        max-height: 1000px;
+    }
+}
+
+.show {
+    animation-name: show-text;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes show-text {
+    to {
+        max-height: 120px;
+    }
+}
+
+.footer-card {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: rgba(240, 241, 242, 0.4);
+    padding: 24px 24px 24px 22px;
+    border-left: 2px solid #3498DB;
+}
+
+.footer-desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @media (min-width: 745px) {
+        min-width: 423px;
+    }
+}
+
+.footer-text .forecast {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.footer-text .forecast-text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.one-x {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.one-x-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.coeff {
+    font-family: 'Future', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.btn-container {
+    width: 100%;
+}
+
+.take-rate {
+    background-color: #3498DB;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+.take-rate:hover {
+    background-color: #3389c3;
+}
+
+.take-rate:active {
+    background-color: #26648e;
+}
+
+.expand-btn {
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background-color: white;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+    transition: background-color 100ms ease-in-out;
+    cursor: pointer;
+}
+
+.expand-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.expand-btn:active {
+    background-color: #ececec;
+}
+
+.arrow {
+    transition: all 250ms ease-in-out;
+}
