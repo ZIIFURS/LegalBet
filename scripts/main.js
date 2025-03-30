@@ -19,15 +19,3 @@ btn.addEventListener('click', (e) => {
     void text.offsetHeight;
     open = !open;
 })
-
-// const statistic = document.querySelector('.statistic');
-//
-// function updateContent() {
-//     if (window.matchMedia('(max-width: 744px)').matches) {
-//         statistic.
-//     }
-// }
-//
-// updateContent();
-//
-// window.addEventListener('resize', updateContent);
